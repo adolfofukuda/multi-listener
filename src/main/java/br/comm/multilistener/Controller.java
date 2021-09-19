@@ -2,16 +2,16 @@ package br.comm.multilistener;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.common.TesteService;
+import lombok.RequiredArgsConstructor;
 import br.com.common.TesteEntity;
 
 @RestController
+@RequiredArgsConstructor
 public class Controller {
-    @Autowired
-    private TesteService service;
+    private final TesteService service;
 
     @GetMapping("/parametros/teste")
     public ParametroDTO getParametros() {
