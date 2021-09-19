@@ -1,0 +1,14 @@
+spring:
+    application: 
+        name: multilistener
+    profiles:
+        active: local
+
+---
+spring:
+    profiles: local
+    data:
+        mongodb:
+            uri: mongodb://root:MongoDB2019%21@localhost:27017/local?authSource=admin&readPreference=primary&ssl=false
+    autoconfigure:
+        exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
